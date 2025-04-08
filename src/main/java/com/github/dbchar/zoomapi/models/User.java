@@ -12,6 +12,7 @@ public class User {
     @SerializedName("last_name")
     private final String lastName;
     private final String email;
+    private final String type;
     @SerializedName("role_name")
     private final String roleName;
     @SerializedName("role")
@@ -19,11 +20,12 @@ public class User {
     @SerializedName("created_at")
     private final String createDate;
 
-    public User(String id, String firstName, String lastName, String email, String roleName, String role, String createDate) {
+    public User(String id, String firstName, String lastName, String email, String type, String roleName, String role, String createDate) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.type = type;
         this.roleName = roleName;
         this.role = role;
         this.createDate = createDate;
@@ -53,6 +55,10 @@ public class User {
         return firstName + " " + lastName;
     }
 
+    public String getType() {
+        return type;
+    }
+
     public String getRole() {
         return role;
     }
@@ -72,6 +78,7 @@ public class User {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
+                ", type='" + type + '\'' +
                 ", roleName='" + roleName + '\'' +
                 ", role='" + role + '\'' +
                 ", createDate='" + createDate + '\'' +

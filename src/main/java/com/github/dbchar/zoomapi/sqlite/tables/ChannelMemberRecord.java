@@ -26,6 +26,8 @@ public class ChannelMemberRecord {
     private String lastName;
     @Column(name = "email")
     private String email;
+    @Column(name = "type")
+    private String type;
     @Column(name = "role_name")
     private String roleName;
     @Column(name = "role")
@@ -42,6 +44,7 @@ public class ChannelMemberRecord {
                                String firstName,
                                String lastName,
                                String email,
+                               String type,
                                String roleName,
                                String role,
                                String createDate) {
@@ -51,6 +54,7 @@ public class ChannelMemberRecord {
         this.firstName = firstName == null ? "" : firstName;
         this.lastName = lastName == null ? "" : lastName;
         this.email = email == null ? "" : email;
+        this.type = type;
         this.roleName = roleName == null ? "" : roleName;
         this.role = role == null ? "" : role;
         this.createdDate = createDate == null ? "" : roleName;
@@ -67,6 +71,7 @@ public class ChannelMemberRecord {
                 "",
                 "",
                 "",
+                "",
                 "");
     }
 
@@ -77,6 +82,7 @@ public class ChannelMemberRecord {
                 user.getFirstName(),
                 user.getLastName(),
                 user.getEmail(),
+                user.getType(),
                 user.getRoleName(),
                 user.getRole(),
                 user.getCreateDate());
@@ -87,6 +93,7 @@ public class ChannelMemberRecord {
                 firstName,
                 lastName,
                 email,
+                type,
                 roleName,
                 role,
                 createdDate);
